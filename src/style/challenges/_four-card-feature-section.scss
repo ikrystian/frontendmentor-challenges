@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+.four-card-feature-challenge {
+  --background-color: hsl(0, 0%, 98%);
+  --headers-color: hsl(234, 12%, 34%);
+  --font-color: hsl(229, 6%, 66%);
+  --color-1: hsl(180, 62%, 55%);
+  --color-2: hsl(0, 78%, 62%);
+  --color-3: hsl(34, 97%, 64%);
+  --color-4: hsl(212, 86%, 64%);
+  --card-background-color: hsl(0, 0%, 100%);
+  --card-shadow-color: hsl(210, 8%, 93%);
+
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  font-weight: 400;
+  color: var(--font-color);
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--headers-color);
+    font-weight: 200;
+    font-size: 1.5em;
+    margin: 2px auto;
+    text-align: center;
+  }
+
+  h2 {
+    font-weight: 600;
+  }
+
+  p {
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+    font-weight: 200;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .header {
+    max-width: 350px;
+    margin: auto;
+    padding: 2rem 1rem 0;
+
+    @media screen and (min-width: 1440px) {
+      max-width: 520px;
+    }
+  }
+
+  .card {
+    background-color: var(--card-background-color);
+    margin: 1rem 2rem;
+    padding: 1.5rem;
+    position: relative;
+    border-radius: 0.5rem;
+    border-top: 4px solid transparent;
+    box-shadow: 0 10px 20px 0 var(--card-shadow-color);
+    max-width: 350px;
+
+    @media screen and (min-width: 1440px) {
+      margin: 1.5rem 1rem;
+    }
+
+    &--supervisor {
+      border-top-color: var(--color-1);
+    }
+
+    &--team-builder {
+      border-top-color: var(--color-2);
+    }
+
+    &--karma {
+      border-top-color: var(--color-3);
+    }
+
+    &--calculator {
+      border-top-color: var(--color-4);
+    }
+
+    &__title {
+      font-size: 1.25em;
+      margin-top: 0;
+      font-weight: 600;
+    }
+
+    &__paragraph {
+      font-weight: 200;
+      text-align: left;
+      line-height: 1.5em;
+      padding: 0;
+      font-size: 14px;
+      margin: 0.5rem 0 1.5rem 0;
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: 1440px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}
