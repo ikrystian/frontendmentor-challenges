@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import '../abstracts/mixins';
+
+body.signup-form-challenge {
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --dark-green: #32b981;
+  --blue: hsl(248, 32%, 49%);
+  --dark-blue: hsl(249, 10%, 26%);
+  --grayish-blue: hsl(246, 25%, 77%);
+  --font-color: hsl(0, 100%, 100%);
+  --form-background-color: hsl(0, 100%, 100%);
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background: var(--red) url('../static/signup-form/bg-intro-desktop.png') top left;
+  color: var(--font-color);
+  font-weight: 500;
+
+  ::placeholder {
+    color: var(--dark-blue);
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  .wrapper {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    @include res(wide) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .button {
+    font-family: 'Poppins', sans-serif;
+    border: 0;
+    background-color: var(--blue);
+    border-radius: 8px;
+    display: inline-block;
+    padding: 20px 42px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--font-color);
+    font-weight: 400;
+    font-size: 16px;
+    box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 0.2s ease opacity;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  .container {
+    margin: 57px auto;
+    max-width: 543px;
+
+    @include res(wide) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &:first-child {
+        align-items: flex-end;
+        margin-right: 1rem;
+      }
+
+      &:last-child {
+        margin-left: 1rem;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  .header {
+    text-align: center;
+
+    @include res(wide) {
+      text-align: left;
+    }
+
+    &__title {
+      font-size: 28px;
+      margin-bottom: 12px;
+
+      @include res(wide) {
+        font-size: 48px;
+      }
+    }
+
+    &__button {
+      display: block;
+      width: 100%;
+
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .form {
+    background-color: var(--form-background-color);
+    margin-top: 2rem;
+    border-radius: 8px;
+    padding: 22px;
+    color: var(--grayish-blue);
+    box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.2);
+
+    &__label {
+      width: 0;
+      height: 0;
+      position: fixed;
+      left: 0;
+      top: 0;
+      overflow: hidden;
+    }
+
+    &__group {
+      margin-bottom: 1rem;
+    }
+
+    &__input {
+      width: 100%;
+      padding: 0 60px 0 16px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      border: 1px solid var(--grayish-blue);
+      color: var(--dark-blue);
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      transition: border 0.2s ease;
+      background-color: var(--form-background-color);
+
+      &:focus {
+        border-color: var(--dark-blue);
+      }
+
+      &--alert {
+        color: var(--red);
+        border: 2px solid var(--red);
+        background-image: url('../static/signup-form/icon-error.svg');
+        background-repeat: no-repeat;
+        background-position: right 1rem top 13px;
+
+        + span {
+          display: block;
+        }
+
+        &::placeholder {
+          color: var(--red);
+        }
+      }
+    }
+
+    &__alert {
+      display: none;
+      font-size: 12px;
+      font-style: italic;
+      text-align: right;
+      color: var(--red);
+    }
+
+    &__button {
+      width: 100%;
+      display: block;
+      background-color: var(--green);
+      text-transform: uppercase;
+      margin-top: 0;
+      box-shadow: 0 4px 0 0 var(--dark-green);
+      font-weight: 600;
+    }
+
+    &__footer {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 400;
+      padding: 0 0.5rem;
+
+      a {
+        color: var(--red);
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
