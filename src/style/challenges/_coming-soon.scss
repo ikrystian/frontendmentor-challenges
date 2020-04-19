@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+@import '../abstracts/_mixins.scss';
+
+body.coming-soon-challenge {
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-frayish-red: hsl(0, 6%, 24%);
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+
+  @media screen and (min-width: 1440px) {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr;
+  }
+
+  ::placeholder {
+    color: var(--desaturated-red);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  .header {
+    padding: 26px 32px;
+
+    @include res(wide) {
+      padding-left: 0;
+    }
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+
+    @include res(wide) {
+      max-width: 666px;
+    }
+  }
+
+  .coming-soon {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+
+    @include res(wide) {
+      background: url('../static/coming-soon/bg-pattern-desktop.svg');
+      background-size: cover;
+    }
+  }
+
+  .logo {
+    &__image {
+      max-height: 22px;
+
+      @include res(wide) {
+        max-height: 100%;
+      }
+    }
+  }
+
+  .mobile-hero {
+    margin-bottom: 48px;
+
+    @include res(wide) {
+      display: none;
+    }
+
+    &__image {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .desktop-hero {
+    display: none;
+    overflow: hidden;
+    height: 100vh;
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include res(wide) {
+      display: block;
+    }
+
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--desaturated-red);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    letter-spacing: 6px;
+    max-width: 190px;
+    margin: auto;
+
+    @include res(wide) {
+      text-align: left;
+      margin-left: 0;
+      font-size: 60px;
+    }
+
+    span {
+      font-weight: 600;
+      color: var(--dark-frayish-red);
+    }
+  }
+
+  .main-content {
+    margin: 16px 0;
+    padding: 0 16px;
+    text-align: center;
+    color: var(--desaturated-red);
+    line-height: 1.4;
+
+    @include res(wide) {
+      text-align: left;
+      max-width: 450px;
+      padding-left: 0;
+    }
+  }
+
+  .form {
+    margin: 32px auto 16px;
+    padding: 0 16px;
+    max-width: 450px;
+
+    @include res(wide) {
+      padding-left: 0;
+      margin-left: 0;
+      margin-bottom: 120px;
+      padding-bottom: 2rem;
+    }
+
+    &__group {
+      position: relative;
+    }
+
+    &__label {
+      position: fixed;
+      left: -1px;
+      top: -1px;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+    }
+
+    &__input {
+      height: 48px;
+      background-color: transparent;
+      border-radius: 24px;
+      border: 1px solid var(--desaturated-red);
+      display: flex;
+      align-items: center;
+      padding: 0 80px 0 24px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 16px;
+      width: 100%;
+
+      &--error {
+        border: 2px solid var(--soft-red);
+
+        + .form__alert {
+          display: block;
+        }
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 72px;
+      display: none;
+    }
+
+    &__alert {
+      color: var(--soft-red);
+      position: absolute;
+      bottom: -28px;
+      left: 24px;
+      display: none;
+    }
+
+    &__submit {
+      border: 0;
+      width: 64px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 24px;
+      background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        background: hsl(0, 80%, 86%);
+      }
+    }
+  }
+}

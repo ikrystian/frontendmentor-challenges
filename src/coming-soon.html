@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="./static/favicon-32x32.png">
+    <title>Static HTML Site Boilerplate</title>
+</head>
+<body class="coming-soon-challenge">
+<div class="coming-soon">
+    <div class="container">
+        <header class="header">
+            <a class="logo" href="#">
+                <img src="./static/coming-soon/logo.svg" class="logo__image" alt="logo">
+            </a>
+        </header>
+        <section class="mobile-hero">
+            <img src="./static/coming-soon/hero-mobile.jpg" class="mobile-hero__image" alt="hero image">
+        </section>
+        <div>
+            <h1 class="title">we're <span>coming soon</span></h1>
+
+            <p class="main-content">
+                Hello fellow shoppers! We're currently building our new fashion store.
+                Add your email below to stay up-to-date with announcements and our launch deals.
+            </p>
+
+            <form method="post" autocomplete="off" action="" id="form" class="form">
+                <div class="form__group">
+                    <label class="form__label" for="email">Your email address</label>
+                    <input type="email" name="email" id="email" class="form__input" placeholder="Email Address"
+                           required>
+                    <span class="form__alert" role="alert">Please provide a valid email</span>
+                    <img src="./static/coming-soon/icon-error.svg" class="form__icon" alt="">
+                    <button type="submit" class="form__submit">
+                        <img src="./static/coming-soon/icon-arrow.svg" alt="submit arrow">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<section class="desktop-hero">
+    <img src="./static/coming-soon/hero-desktop.jpg" class="desktop-hero__image" alt="hero image">
+</section>
+</body>
+</html>
