@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+@import '../abstracts/mixins';
+
+body.single-page-column {
+  --background-color: #fff;
+  --blue: hsl(223, 87%, 63%);
+  --pale-blue: hsl(223, 100%, 88%);
+  --red-light: hsl(354, 100%, 66%);
+  --gray: hsl(0, 0%, 59%);
+  --very-dark-blue: hsl(209, 33%, 12%);
+  --font-size: 20px;
+
+  margin: 0;
+  padding: 90px 0 0;
+  box-sizing: border-box;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: var(--font-size);
+  background-color: var(--background-color);
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  .hide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .wrapper {
+    @include res(wide) {
+      width: 644px;
+      margin: auto;
+    }
+  }
+
+  .header {
+    text-align: center;
+
+    &__title {
+      color: var(--gray);
+      font-weight: 300;
+      font-size: 48px;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+
+      strong {
+        color: var(--very-dark-blue);
+      }
+    }
+
+    &__description {
+      font-size: 24px;
+      margin-bottom: 2rem;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .form {
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+
+    @include res(wide) {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    &__input {
+      --margin-bottom: 0.5rem;
+
+      padding: 0 1rem;
+      display: flex;
+      height: 36px;
+      line-height: 36px;
+      border-radius: 18px;
+      border: 1px solid var(--pale-blue);
+      width: 100%;
+      margin-bottom: var(--margin-bottom);
+
+      @include res(wide) {
+        --margin-bottom: 0;
+
+        padding-left: 2rem;
+        font-size: 18px;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 30px;
+      }
+
+      &:invalid {
+        border-color: var(--red-light);
+
+        & + span {
+          display: block;
+        }
+      }
+    }
+
+    &__error {
+      color: var(--red-light);
+      font-size: 14px;
+      text-align: center;
+      display: none;
+
+      @include res(wide) {
+        position: absolute;
+        top: 4rem;
+        left: 3rem;
+      }
+    }
+
+    &__submit {
+      --margin-top: 1rem;
+
+      cursor: pointer;
+      margin-top: var(--margin-top);
+      font-size: 18px;
+      background-color: var(--blue);
+      color: #fff;
+      height: 36px;
+      line-height: 36px;
+      border-radius: 18px;
+      font-weight: 300;
+      padding: 0 1rem;
+      text-align: center;
+      border: 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      @include res(wide) {
+        --margin-top: 0;
+
+        height: 60px;
+        line-height: 60px;
+        border-radius: 30px;
+        margin-left: 1rem;
+        width: 325px;
+      }
+    }
+  }
+
+  .social {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+    li {
+      margin: 0.5rem;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      width: 48px;
+      border: 1px solid var(--pale-blue);
+      border-radius: 50%;
+      text-decoration: none;
+      color: var(--blue);
+      font-size: 24px;
+    }
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 12px;
+    padding: 0.5rem;
+  }
+}
